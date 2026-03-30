@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — SubKiller</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f5f5f7;
+      --surface: #ffffff;
+      --text: #1d1d1f;
+      --secondary: #6e6e73;
+      --accent: #0071e3;
+      --border: #d2d2d7;
+      --radius: 12px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000;
+        --surface: #1c1c1e;
+        --text: #f5f5f7;
+        --secondary: #98989d;
+        --accent: #2997ff;
+        --border: #3a3a3c;
+      }
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 28px 24px 24px;
+      text-align: center;
+    }
+
+    header .app-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+
+    header p {
+      color: var(--secondary);
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+
+    .meta-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .badge {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--secondary);
+    }
+
+    .badge.highlight {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+
+    .card h2 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card h2 .icon { font-size: 20px; }
+
+    .card p {
+      color: var(--secondary);
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    .card p:last-child { margin-bottom: 0; }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .card ul li {
+      color: var(--secondary);
+      font-size: 15px;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .card ul li:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .card ul li::before {
+      content: "•";
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .highlight-box {
+      background: color-mix(in srgb, var(--accent) 10%, transparent);
+      border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      margin-bottom: 16px;
+      font-size: 15px;
+      color: var(--text);
+    }
+
+    .highlight-box strong { color: var(--accent); }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .data-table th {
+      text-align: left;
+      padding: 10px 12px;
+      background: var(--bg);
+      color: var(--secondary);
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .data-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      color: var(--secondary);
+      vertical-align: top;
+    }
+
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table td:first-child { color: var(--text); font-weight: 500; }
+
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 6px;
+      margin-left: 4px;
+    }
+
+    .tag.local { background: #e3f9e5; color: #1a7a32; }
+    .tag.optional { background: #fff3cd; color: #856404; }
+
+    @media (prefers-color-scheme: dark) {
+      .tag.local { background: #1a3d20; color: #4caf6a; }
+      .tag.optional { background: #3d2f00; color: #ffc940; }
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 13px;
+      color: var(--secondary);
+      border-top: 1px solid var(--border);
+    }
+
+    footer a { color: var(--accent); text-decoration: none; }
+    a { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="app-icon">⚔️</div>
+  <h1>SubKiller — Privacy Policy</h1>
+  <p>订阅斩 隐私政策（English Version）</p>
+</header>
+
+<div class="container">
+
+  <div class="meta-bar">
+    <span class="badge highlight">Local-First</span>
+    <span class="badge">No Ad Tracking</span>
+    <span class="badge">No Third-Party SDKs</span>
+    <span class="badge">Effective: January 1, 2025</span>
+  </div>
+
+  <div class="highlight-box">
+    <strong>Our Core Promise:</strong> SubKiller is a local-first app. Your subscription data, spending records, and usage habits are stored only on your device (or synced to your private iCloud account with your explicit permission). We do not collect, upload, or sell any personal data.
+  </div>
+
+  <!-- 1 -->
+  <div class="card">
+    <h2><span class="icon">📋</span>Data We Handle</h2>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Data Type</th>
+          <th>Storage</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Subscription records (name, amount, date)</td>
+          <td>Device / iCloud<span class="tag local">local</span></td>
+          <td>Core app functionality and reminders</td>
+        </tr>
+        <tr>
+          <td>App settings (currency, salary, reminder prefs)</td>
+          <td>Device / iCloud<span class="tag local">local</span></td>
+          <td>Personalized calculations and notifications</td>
+        </tr>
+        <tr>
+          <td>Screen Time data (app usage duration)</td>
+          <td>Device only<span class="tag local">local</span></td>
+          <td>Usage Insight feature (requires your explicit authorization)</td>
+        </tr>
+        <tr>
+          <td>Camera / photo images (OCR scanning)</td>
+          <td>Not stored<span class="tag local">local</span></td>
+          <td>Recognized in memory only; discarded immediately after parsing</td>
+        </tr>
+        <tr>
+          <td>Local notifications</td>
+          <td>Device only<span class="tag local">local</span></td>
+          <td>Billing reminders (requires your permission)</td>
+        </tr>
+        <tr>
+          <td>Crash / diagnostic data</td>
+          <td>Apple platform<span class="tag optional">optional</span></td>
+          <td>Collected by Apple if you have opted in to share diagnostics with developers in device settings</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 2 -->
+  <div class="card">
+    <h2><span class="icon">🚫</span>What We Never Collect</h2>
+    <ul>
+      <li>Personal identity information (name, phone, email, etc.)</li>
+      <li>Location data</li>
+      <li>Device identifiers (IDFA, advertising ID, etc.)</li>
+      <li>Behavioral analytics, click-stream, or usage logs</li>
+      <li>Contacts, calendar, or data from other apps</li>
+      <li>Any data via third-party advertising or analytics SDKs</li>
+    </ul>
+  </div>
+
+  <!-- 3 -->
+  <div class="card">
+    <h2><span class="icon">📱</span>Screen Time (DeviceActivity)</h2>
+    <p>The Usage Insight feature uses Apple's DeviceActivity framework to read app usage duration. This requires you to grant Screen Time permission.</p>
+    <ul>
+      <li>All Screen Time data is processed locally on your device via App Group shared storage between the app and its system extension</li>
+      <li>We only read app display names and usage minutes — never app content</li>
+      <li>This data is never transmitted to any server</li>
+      <li>You can revoke permission at any time in Settings; the app will stop reading immediately</li>
+    </ul>
+  </div>
+
+  <!-- 4 -->
+  <div class="card">
+    <h2><span class="icon">☁️</span>iCloud Sync (Pro only)</h2>
+    <p>Pro users may enable iCloud Sync. When enabled, your subscription data is synced via Apple CloudKit across devices signed in with the same Apple ID.</p>
+    <ul>
+      <li>Data is stored in your personal CloudKit Private Database — we have no access to it</li>
+      <li>Subject to <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a></li>
+      <li>You can manage or delete app data in Settings → Apple ID → iCloud at any time</li>
+    </ul>
+  </div>
+
+  <!-- 5 -->
+  <div class="card">
+    <h2><span class="icon">🔍</span>OCR Magic Scanner</h2>
+    <p>OCR uses Apple's on-device Vision framework. Recognition happens entirely on your device.</p>
+    <ul>
+      <li>Images are processed in memory only and released immediately after recognition — never persisted</li>
+      <li>No image or recognition result is sent to any server or third party</li>
+      <li>You can revoke Camera / Photos access in Settings at any time</li>
+    </ul>
+  </div>
+
+  <!-- 6 -->
+  <div class="card">
+    <h2><span class="icon">🔔</span>Local Notifications</h2>
+    <p>SubKiller uses Apple's UNUserNotificationCenter to deliver billing reminders. Notification content is generated entirely on-device and does not pass through any push notification server or contain tracking parameters.</p>
+    <p>You can disable notifications in Settings → Notifications, or adjust them within the app.</p>
+  </div>
+
+  <!-- 7 -->
+  <div class="card">
+    <h2><span class="icon">🔌</span>Third-Party SDKs &amp; Services</h2>
+    <p>SubKiller <strong>does not integrate any third-party analytics, advertising, or tracking SDKs.</strong></p>
+    <p>All frameworks used are Apple native system frameworks (SwiftData, SwiftUI, Vision, DeviceActivity, FamilyControls, CloudKit, UserNotifications). Their data handling is governed by Apple's Privacy Policy.</p>
+  </div>
+
+  <!-- 8 -->
+  <div class="card">
+    <h2><span class="icon">👶</span>Children's Privacy</h2>
+    <p>SubKiller is designed for users aged 17 and older and is not directed at children. We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected such data, please contact us and we will delete it promptly.</p>
+  </div>
+
+  <!-- 9 -->
+  <div class="card">
+    <h2><span class="icon">🗑️</span>Data Deletion</h2>
+    <p>You can delete all your data at any time by:</p>
+    <ul>
+      <li>In-app: Profile → Danger Zone → Clear All Data</li>
+      <li>Uninstalling the app (removes all local SwiftData on-device storage)</li>
+      <li>If iCloud Sync is enabled: Settings → Apple ID → iCloud → Manage Account Storage → delete SubKiller data</li>
+    </ul>
+  </div>
+
+  <!-- 10 -->
+  <div class="card">
+    <h2><span class="icon">📝</span>Policy Changes</h2>
+    <p>If we make material changes to this policy, we will notify you prominently within the app and update the effective date at the top of this page. Continued use of the app constitutes acceptance of the updated policy.</p>
+  </div>
+
+  <!-- 11 -->
+  <div class="card">
+    <h2><span class="icon">✉️</span>Contact Us</h2>
+    <p>If you have any questions about this Privacy Policy, please contact us:</p>
+    <p>📧 Email: <a href="mailto:support@subkiller.app">support@subkiller.app</a></p>
+    <p style="color: var(--secondary); font-size: 14px; margin-top: 8px;">We aim to respond within 7 business days.</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2025 SubKiller. All rights reserved.</p>
+  <p style="margin-top: 6px;">
+    <a href="privacy.html">中文版本</a>
+  </p>
+</footer>
+
+</body>
+</html>
