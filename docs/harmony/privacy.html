@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>隐私政策 — 订阅斩 SubKiller</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f5f5f7;
+      --surface: #ffffff;
+      --text: #1d1d1f;
+      --secondary: #6e6e73;
+      --accent: #0071e3;
+      --border: #d2d2d7;
+      --radius: 12px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #000000;
+        --surface: #1c1c1e;
+        --text: #f5f5f7;
+        --secondary: #98989d;
+        --accent: #2997ff;
+        --border: #3a3a3c;
+      }
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 28px 24px 24px;
+      text-align: center;
+    }
+
+    header .app-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+
+    header p {
+      color: var(--secondary);
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+
+    .meta-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .badge {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--secondary);
+    }
+
+    .badge.highlight {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+
+    .card h2 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card h2 .icon {
+      font-size: 20px;
+    }
+
+    .card p {
+      color: var(--secondary);
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    .card p:last-child { margin-bottom: 0; }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .card ul li {
+      color: var(--secondary);
+      font-size: 15px;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .card ul li:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .card ul li::before {
+      content: "•";
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .highlight-box {
+      background: color-mix(in srgb, var(--accent) 10%, transparent);
+      border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      margin-bottom: 16px;
+      font-size: 15px;
+      color: var(--text);
+    }
+
+    .highlight-box strong { color: var(--accent); }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .data-table th {
+      text-align: left;
+      padding: 10px 12px;
+      background: var(--bg);
+      color: var(--secondary);
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .data-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      color: var(--secondary);
+      vertical-align: top;
+    }
+
+    .data-table tr:last-child td { border-bottom: none; }
+
+    .data-table td:first-child { color: var(--text); font-weight: 500; }
+
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 6px;
+      margin-left: 4px;
+    }
+
+    .tag.local { background: #e3f9e5; color: #1a7a32; }
+    .tag.optional { background: #fff3cd; color: #856404; }
+    .tag.never { background: #fde8e8; color: #9c1f1f; }
+
+    @media (prefers-color-scheme: dark) {
+      .tag.local { background: #1a3d20; color: #4caf6a; }
+      .tag.optional { background: #3d2f00; color: #ffc940; }
+      .tag.never { background: #3d1010; color: #f87171; }
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 13px;
+      color: var(--secondary);
+      border-top: 1px solid var(--border);
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="app-icon">⚔️</div>
+  <h1>订阅斩 SubKiller — 隐私政策</h1>
+  <p>Privacy Policy</p>
+</header>
+
+<div class="container">
+
+  <div class="meta-bar">
+    <span class="badge highlight">本地优先</span>
+    <span class="badge">无广告跟踪</span>
+    <span class="badge">无第三方 SDK</span>
+    <span class="badge">生效日期：2026年1月1日</span>
+  </div>
+
+  <div class="highlight-box">
+    <strong>核心承诺：</strong>订阅斩是一款本地优先的应用。您的订阅数据、消费记录和使用习惯均仅存储在您的设备上，我们不收集、不上传、不出售任何个人数据。
+  </div>
+
+  <!-- 1. 数据收集 -->
+  <div class="card">
+    <h2><span class="icon">📋</span>我们收集哪些数据</h2>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>数据类型</th>
+          <th>存储位置</th>
+          <th>用途</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>订阅记录（名称、金额、日期）</td>
+          <td>设备本地 <span class="tag local">本地</span></td>
+          <td>核心功能展示与提醒</td>
+        </tr>
+        <tr>
+          <td>应用设置（货币、薪资、提醒偏好）</td>
+          <td>设备本地 / iCloud<span class="tag local">本地</span></td>
+          <td>个性化计算与通知</td>
+        </tr>
+        <tr>
+          <td>本地通知</td>
+          <td>设备本地<span class="tag local">本地</span></td>
+        </tr>
+        <tr>
+          <td>崩溃 / 诊断数据</td>
+          <td>鸿蒙 平台<span class="tag optional">可选</span></td>
+          <td>由 鸿蒙 系统收集（须您在设备设置中同意与开发者共享）</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 2. 我们不收集什么 -->
+  <div class="card">
+    <h2><span class="icon">🚫</span>我们绝不收集的内容</h2>
+    <ul>
+      <li>姓名、电话、邮箱等个人身份信息</li>
+      <li>位置信息</li>
+      <li>设备标识符</li>
+      <li>行为埋点、点击流或用户行为日志</li>
+      <li>联系人、日历或其他应用数据</li>
+      <li>通过第三方广告或分析 SDK 采集的任何数据</li>
+    </ul>
+  </div>
+
+  <!-- 6. 通知 -->
+  <div class="card">
+    <h2><span class="icon">🔔</span>本地通知</h2>
+    <p>应用使用 鸿蒙 本地通知，通知内容完全由应用本地生成，不经过任何推送服务器，不包含追踪参数。</p>
+    <p>您可随时在系统设置 → 通知中关闭，或在应用内提醒设置中调整。</p>
+  </div>
+
+  <!-- 7. 第三方 SDK -->
+  <div class="card">
+    <h2><span class="icon">🔌</span>第三方 SDK 与服务</h2>
+    <p>订阅斩 <strong>不集成任何第三方分析、广告或追踪 SDK</strong>。</p>
+    <p>应用使用的所有框架均为鸿蒙原生系统框架，这些框架的数据处理适用华为鸿蒙隐私政策。</p>
+  </div>
+
+  <!-- 8. 儿童隐私 -->
+  <div class="card">
+    <h2><span class="icon">👶</span>儿童隐私</h2>
+    <p>本应用不专门面向儿童设计，不故意收集 13 岁以下儿童的个人信息。如您认为我们无意中获取了儿童数据，请联系我们，我们将立即处理。</p>
+  </div>
+
+  <!-- 9. 数据删除 -->
+  <div class="card">
+    <h2><span class="icon">🗑️</span>数据删除</h2>
+    <p>您可以随时通过以下方式删除您的全部数据：</p>
+    <ul>
+      <li>在应用内清空所有数据</li>
+      <li>卸载应用</li>
+    </ul>
+  </div>
+
+  <!-- 10. 变更 -->
+  <div class="card">
+    <h2><span class="icon">📝</span>政策变更</h2>
+    <p>若本政策发生重大变更，我们将在应用内以显著方式通知您，并更新本页顶部的生效日期。继续使用应用即视为您接受更新后的政策。</p>
+  </div>
+
+  <!-- 11. 联系我们 -->
+  <div class="card">
+    <h2><span class="icon">✉️</span>联系我们</h2>
+    <p>如对本隐私政策有任何疑问，请通过以下方式联系：</p>
+    <p>📧 邮箱：<a href="mailto:support@subkiller.app">119123059@qq.com</a></p>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2025 xunwang. 保留所有权利。</p>
+  <p style="margin-top: 6px;">
+    本政策以中文版本为准。
+  </p>
+</footer>
+
+</body>
+</html>
